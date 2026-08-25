@@ -1,12 +1,11 @@
 package dev.cabezudo.games;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 class GamesApplicationTests {
 
     @Test
-    void contextLoads() {
+    void applicationStarts() {
+        GamesApplication.main(new String[] { "--spring.main.web-application-type=none" });
     }
 }
