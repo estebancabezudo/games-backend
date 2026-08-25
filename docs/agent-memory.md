@@ -1,0 +1,33 @@
+# Memoria de agentes — Games
+
+## Regla absoluta de endpoints
+
+Los guiones (`-`) están totalmente prohibidos en todos los segmentos de endpoints. Los
+conceptos compuestos se modelan con recursos anidados en inglés, por ejemplo
+`/api/clients`, nunca `/api-clients`. No crear rutas ni aliases con guiones; una ruta
+existente que los use es deuda que debe corregirse, no un precedente que copiar.
+
+## Regla de documentación
+
+Una conversación dedicada a código no modifica la documentación pública. Registra
+cualquier delta para personas en
+`api/backend/docs/prompts/public-documentation-backlog.md`; la publicación se realiza
+únicamente cuando se solicite de forma explícita.
+
+## Alcance
+
+Games es el ejecutable backend propietario del comportamiento específico de juegos y
+de las solicitudes de su frontend. El código reutilizable por otros módulos pertenece
+a Plataforma.
+
+## Estado actual
+
+El módulo contiene únicamente el arranque mínimo de Spring Boot. No tiene controllers,
+services, repositories, entidades, endpoints, seguridad, persistencia ni almacenamiento
+de archivos.
+
+## Operación
+
+- Compilar y verificar desde `api/backend/` con
+  `./mvnw -B -pl games clean verify`.
+- El módulo usa Java 21 y Spring Boot 4.1.0.
