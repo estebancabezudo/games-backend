@@ -31,3 +31,5 @@ de archivos.
 - Compilar y verificar desde `api/backend/` con
   `./mvnw -B -pl games clean verify`.
 - El módulo usa Java 21 y Spring Boot 4.1.0.
+- El entorno local sirve el frontend hermano mediante Nginx en
+  `http://games.localhost:8080`; Vite permanece interno en el puerto `5175`.
