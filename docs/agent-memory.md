@@ -11,7 +11,7 @@ existente que los use es deuda que debe corregirse, no un precedente que copiar.
 
 Una conversación dedicada a código no modifica la documentación pública. Registra
 cualquier delta para personas en
-`api/backend/docs/prompts/public-documentation-backlog.md`; la publicación se realiza
+`../platform/docs/prompts/public-documentation-backlog.md`; la publicación se realiza
 únicamente cuando se solicite de forma explícita.
 
 ## Alcance
@@ -28,8 +28,7 @@ de archivos.
 
 ## Operación
 
-- Compilar y verificar desde `api/backend/` con
-  `./mvnw -B -pl games clean verify`.
+- Compilar y verificar desde este repositorio con `./mvnw -B clean verify`.
 - El módulo usa Java 21 y Spring Boot 4.1.0.
 - El entorno local sirve el frontend hermano mediante Nginx en
   `http://games.localhost:8080`; Vite permanece interno en el puerto `5175`.
