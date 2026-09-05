@@ -26,6 +26,22 @@ El módulo contiene únicamente el arranque mínimo de Spring Boot. No tiene con
 services, repositories, entidades, endpoints, seguridad, persistencia ni almacenamiento
 de archivos.
 
+## Pendiente diferido
+
+- Diferido por decisión del usuario: conectar `Guardar`, `Continuar` y `Reiniciar`
+  partida, y permitir abrir/exportar el documento YAML del editor. Son flujos
+  separados: el progreso del jugador no reemplaza el contenido de la aventura.
+- El frontend ya tiene `game-progress.js` y `game-progress-storage.js`, con snapshot
+  versionado y validación de juego, flags, inventario, escenas y posiciones; todavía
+  no están conectados a la interfaz. El editor tampoco abre ni exporta documentos.
+  La memoria detallada del frontend permanece en `docs/frontend-agent-memory.md`.
+- Al retomarlo, reutilizar esos contratos sin crear backend ni nuevas dependencias;
+  validar YAML y conservar datos ante errores de almacenamiento o incompatibilidad.
+  Éxito observable: guardar, recargar y continuar conserva escena, inventario, flags
+  y posiciones; reiniciar restablece la partida de forma explícita; exportar y abrir
+  el YAML reproduce el contenido editado sin confundirlo con un guardado de progreso.
+  No implementar estos flujos hasta que se retomen.
+
 ## Operación
 
 - Compilar y verificar desde este repositorio con `./mvnw -B clean verify`.
